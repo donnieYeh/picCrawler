@@ -1,4 +1,3 @@
-from curses import raw
 from email import header
 import os
 import time
