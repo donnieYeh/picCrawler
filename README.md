@@ -26,14 +26,15 @@
 [outlookAPI相关文档](https://docs.microsoft.com/zh-cn/dotnet/api/microsoft.office.interop.outlook.items?view=outlook-pia)
 
 
-### 2种邮件处理策略
+### N种邮件处理策略
 公共特征： 
 - sender address 包含 recommend
 - 跳转链接带有 “utm_content” 字符串
 
 #### 图板推荐
 特征：
-- subject 包含“**图板**”二字
+- utm_campaign contains "board"
+- ~~subject 包含“**图板**”二字~~
 - 跳转到图板页，需要模拟浏览器动作以获取二级图片
 
 策略：
@@ -41,8 +42,18 @@
 
 #### 热门pin图
 特征
-- subject包含“pin图”二字
+- utm_campaign=popular_pins
+- ~~subject包含“pin图”二字~~
 - 跳转到图片页，可直接获取图片链接
+
+#### 已知分类
+{'multiplecreatorrecs', 'recommended_searches', 'ruadboards', 'rppspinrecs', 'category_pp', 'sharedpins', 'rdboards', 'rdpins', 'category_rp', 'rrppspinrecs', 'search_rmkt', 'related_searches', 'popular_pins', 'emailconfirmwlc', 'interestrecommendations', 'homefeednewpins', 'activity', 'trending_searches', 'newloginemail', 'pinrecsfirst', 'pinrecs', 'rtpinrecs'} 
+
+#### 白名单
+{'ruadboards', 'rppspinrecs', 'category_pp', 'sharedpins', 'rdboards', 'rdpins', 'category_rp', 'rrppspinrecs', 'search_rmkt', 'popular_pins', 'homefeednewpins', 'pinrecsfirst', 'pinrecs', 'rtpinrecs'} 
+
+#### 图板分类
+{'ruadboards', 'rdboards'} 
 
 ---
 
